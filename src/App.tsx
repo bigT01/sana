@@ -1,7 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from "./Layout";
+import axios from "./Utils/axios";
 
 function App() {
+
+    useEffect(() => {
+        axios.post('/news/')
+            .then((response) => {
+                console.log('Data:', response.data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }, [])
+
     return (
         <Layout>
 

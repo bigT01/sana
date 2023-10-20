@@ -36,19 +36,33 @@ const Authorization = () => {
     }, [passwordConfirmation]);
 
     const SubmitHandler = () => {
-        axios.post('/register', {
-            email: email,
-            password: password,
-            user_name: fullName,
-            sure_name: fullName,
-            role: role === 'teacher' ? 'Course teacher' : 'Learning user'
-        })
-            .then((response) => {
-                console.log('Data:', response.data);
+        if(isLogin){
+            axios.post('/auth/', {
+                email: email,
+                password: password,
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then((response) => {
+                    console.log('Data:', response.data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        } else {
+            axios.post('/register/', {
+                email: email,
+                password: password,
+                user_name: fullName,
+                sure_name: fullName,
+                role: role === 'teacher' ? 'Course teacher' : 'Learning user'
+            })
+                .then((response) => {
+                    console.log('Data:', response.data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
     }
 
     return(

@@ -11,7 +11,8 @@ module.exports = {
         'totalWhite' : "#FFFFFF",
         "totalBlack" : "#000000",
         'primaryPurple' : "#BB6BD9",
-        'secondaryGrey' : '#333333'
+        'secondaryGrey' : '#333333',
+        'primaryBlue' : "#2D9CDB"
       },
     },
   },

@@ -11,10 +11,31 @@ h3{
     font-size: 32px;
 }
 
+h4{
+    font-weight: medium;
+    font-size: 20px;
+}
+
+h5{
+    font-weight: medium;
+    font-size: 16px;
+    color: #828282;
+}
+
 input:focus-visible{
     outline: none;
 }
 
 select:focus-visible{
     outline: none;
+}
+
+.animation-scale{
+    transform: scale(1.0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.animation-scale:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
